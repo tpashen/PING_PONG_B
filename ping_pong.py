@@ -35,7 +35,9 @@ class Player(GameSprite):
 
 #Zhiharev - 3
 
-#3ralenno - 4
+#ralenno - 4
+
+#5 
 
 
 
