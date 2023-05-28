@@ -32,23 +32,7 @@ class Player(GameSprite):
             self.rect.y -= self.speed
         if keys[k_s] and self.rect.y < win_height - 80:
             self.rect.y += self.speed
-
-#Zhiharev - 3
-while game:	
-	for e in event.get():	
-		if e.type == QUIT:
-		game = False
-	    if finish != True:	
-		window.fill(back)
-		racketl.update_l()
-		racket2.update_r()
-		ball.rect.x += speed_x
-		ball.rect.y += speed_y
-		if sprite.collide_rect(racketl, ball) or sprite.collide_rect(racket2, ball):
-		    speed_x *= -1
-		    speed_y *= 1
-#ralenno - 4
-
+	
 back = (200, 255.255)
     win_width = 600
     win_height = 500
@@ -68,6 +52,24 @@ back = (200, 255.255)
     font = font.Font('calibri.ttf',35)
     lose1 = font.render('PLAYER 1 LOSE!', True,(180,0,0))
     lose2 = font.render("PLAYER 2 LOSE!", True, (180,0,0))
+
+#Zhiharev - 3
+while game:	
+	for e in event.get():	
+		if e.type == QUIT:
+		game = False
+	    if finish != True:	
+		window.fill(back)
+		racketl.update_l()
+		racket2.update_r()
+		ball.rect.x += speed_x
+		ball.rect.y += speed_y
+		if sprite.collide_rect(racketl, ball) or sprite.collide_rect(racket2, ball):
+		    speed_x *= -1
+		    speed_y *= 1
+#ralenno - 4
+
+
 
 #5
     if ball.rect.y > win_height-50 or ball.rect.y < 0:
